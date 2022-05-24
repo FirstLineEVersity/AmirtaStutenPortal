@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btn_info_selector.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btnhover.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btnnormal.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btnselector.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/grid_corner_radious.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/grid_corner_radious_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/ic_password_24.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/ic_person_white.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/image_circle.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/login_border.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/grid_selector.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_address.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_batch.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_department_24.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_education_24.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_gender.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_ic_baseline_phone_android_24.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_institution.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_mail.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_program.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_qualification.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable/p_reg_no.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/activity_homescreen.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/activity_login.xml" value="0.11141304347826086" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/activity_main.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/activity_personaldetails.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/changepassword.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/content_main2.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/content_main3.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/feeduegroupitem.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/feeduelistitems.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/financedetailsgroupitem.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/financelistitems.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_attendancedetails.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_cummulativattendance.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_examdetails.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_feedetails.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_financedetails.xml" value="0.14" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_hosteldetails.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_hourwiseattendance.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_internalmarkdetails.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_librarytransaction.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_notificationview.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_profile.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/fragment_studentwisesubject.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/gridlayout_cardview_home_page.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/gridsingle.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/header.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/librarytransactionlistitems.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/login_activity.xml" value="0.11141304347826086" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/nav_header_main.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/notificationgroupitem.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/notificationlistitems.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/page_footer.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/layout/page_header.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/menu/activity_main_drawer.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/menu/main.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/menu/main_menu.xml" value="0.1671875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
