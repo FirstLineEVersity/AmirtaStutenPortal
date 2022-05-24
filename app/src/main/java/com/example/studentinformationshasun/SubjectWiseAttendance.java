@@ -84,12 +84,14 @@ public class SubjectWiseAttendance extends AppCompatActivity {
             if (cursor.moveToFirst()){
                 txtNoData.setVisibility(View.GONE);
                 addHeaderData();
+                int i = 0;
                 do {
                     tvLastUpdated.setText("Last Updated: "+cursor.getString(cursor.getColumnIndex("lastupdated")));
                     String strRow = cursor.getString(cursor.getColumnIndex("subjectcode")) + "##" + cursor.getString(cursor.getColumnIndex("presenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("absenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("totalhrs"))+"##"+cursor.getString(cursor.getColumnIndex("presentpercentage"));
                     String strAbbreviation = "<font color='#2e76b2'><b>"+cursor.getString(cursor.getColumnIndex("subjectcode"))  + " </b></font> - " + cursor.getString(cursor.getColumnIndex("subjectdesc"));
                     String[] strColumns = strRow.split("##");
-                    addData(strColumns);
+                    addData(strColumns,i);
+                    i++;
                     addAbbrivationData(strAbbreviation);
                     //strSubjectAbbrevation=strSubjectAbbrevation + strAbbreviation+",";
                 } while (cursor.moveToNext());
@@ -202,14 +204,19 @@ public class SubjectWiseAttendance extends AppCompatActivity {
         tl.addView(tr, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
     }
 
-    public void addData(String[] str) {
+    public void addData(String[] str,int pos) {
         TableLayout tl = findViewById(R.id.tblViewsubjectattendance);
         TableRow tr = new TableRow(SubjectWiseAttendance.this);
         TableRow.LayoutParams params1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         params1.setMargins(10, 0, 0, 10);
         params1.weight = 1;
         tr.setLayoutParams(params1);
-        tr.setBackgroundResource(R.color.cardColorp);
+        if(pos % 2 == 0) {
+            tr.setBackgroundResource(R.color.colorWhite);
+        }else{
+            tr.setBackgroundResource(R.color.colorGrey);
+
+        }
         for (int i = 0; i < str.length; i++) {
             TextView tv = new TextView(SubjectWiseAttendance.this);
             tv.setLayoutParams(params1);

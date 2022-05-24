@@ -82,6 +82,7 @@ public class InternalMarkDetails extends AppCompatActivity {
             Cursor cursor = db.rawQuery("SELECT strftime('%d-%m-%Y %H:%M:%S', lastupdatedate) as lastupdated,* FROM internalmarkdetails WHERE studentid=" + lngStudentId, null);
             if (cursor.moveToFirst()){
                 addHeaderData();
+                int i = 0;
                 do {
                     tvLastUpdated.setText("Last Updated: "+cursor.getString(cursor.getColumnIndex("lastupdated")));
                     String strRow = cursor.getString(cursor.getColumnIndex("subjectcode"))+ "##"+
@@ -90,7 +91,8 @@ public class InternalMarkDetails extends AppCompatActivity {
                             cursor.getString(cursor.getColumnIndex("maxmarks"));
                     String[] strColumns = strRow.split("##");
                     String strAbbreviation = "<font color='#2e76b2'><b>"+cursor.getString(cursor.getColumnIndex("subjectcode")) + " </b></font> - " + cursor.getString(cursor.getColumnIndex("subjectdesc"));
-                    addData(strColumns);
+                    addData(strColumns,i);
+                    i++;
                     addAbbrivationData(strAbbreviation);
                 } while (cursor.moveToNext());
             } else {
@@ -188,15 +190,19 @@ public class InternalMarkDetails extends AppCompatActivity {
         tl.addView(tr, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
     }
 
-    public void addData(String[] str) {
+    public void addData(String[] str, int pos) {
         TableLayout tl = findViewById(R.id.tblViewInternalmarkdetails);
         TableRow tr = new TableRow(InternalMarkDetails.this);
         TableRow.LayoutParams params1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         params1.setMargins(10, 10, 10, 10);
         params1.weight = 1;
         tr.setLayoutParams(params1);
-        tr.setBackgroundResource(R.color.cardColorp);
-        for (int i = 0; i < str.length; i++){
+        if(pos % 2 == 0) {
+            tr.setBackgroundResource(R.color.colorWhite);
+        }else{
+            tr.setBackgroundResource(R.color.colorGrey);
+
+        }for (int i = 0; i < str.length; i++){
             TextView tv = new TextView(InternalMarkDetails.this);
             tv.setLayoutParams(params1);
             tv.setText(str[i]);
