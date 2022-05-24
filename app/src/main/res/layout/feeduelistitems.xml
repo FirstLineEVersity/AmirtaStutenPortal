@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:id="@+id/llFee"
+    android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/duedate"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/duename"
+            android:text="Sample"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textAlignment="textEnd"
+            android:id="@+id/dueamt"
+            >
+        </TextView>
+        <!--</TableRow>-->
+        <!--</TableLayout>-->
+
+</LinearLayout>

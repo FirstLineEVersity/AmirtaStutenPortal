@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorGreen">#00574a</color>
+    <color name="colorPrimary">#521423</color>
+    <color name="colorPrimaryDark">#521423</color>
+    <color name="colorAccent">#521423</color>
+    <color name="colornormal">#F6F7F9</color>
+    <color name="colorhower">#c3cddd</color>
+    <color name="colorblue">#521423</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGrey">#efefef</color>
+    <color name="colorGreyLogin">#fcf0f5</color>
+    <color name="cardColor">#dddddd</color>
+    <color name="cardColorp">#f7d7e3</color>
+    <color name="cardColoro">#DC6A72</color>
+
+
+    <color name="appColor">#521423</color>
+    <color name="appColorButton">#521423</color>
+    <color name="appColorText">#521423</color>
+    <color name="colorAccentIcon">#521423</color>
+    <color name="btnCornerColor">#521423</color>
+    <color name="btnHover">#eeeeee</color>
+
+
+</resources>

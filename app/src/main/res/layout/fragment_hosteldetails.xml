@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hosteldetailshtml"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/layPageHeader"
+        layout="@layout/page_header"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHostelDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorblue"
+        android:scrollbars="vertical">
+    </androidx.recyclerview.widget.RecyclerView>
+    <include
+        android:id="@+id/pageFooter"
+        layout="@layout/page_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

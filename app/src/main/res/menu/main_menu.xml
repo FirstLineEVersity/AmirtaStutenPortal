@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view"
+
+    >
+    <group android:checkableBehavior="single"
+
+        >
+        <item
+            android:id="@+id/nav_personaldetails"
+            android:icon="@drawable/icon_personaldetails"
+            app:showAsAction="always"
+            android:title="@string/hProfile" />
+        <item
+            android:id="@+id/nav_feesdues"
+            android:icon="@drawable/icon_feedetails"
+            android:title="@string/menu_feesdues" />
+        <item
+            android:id="@+id/nav_feespayments"
+            android:icon="@drawable/icon_financedetails"
+            android:title="@string/menu_feespayments" />
+        <item
+            android:id="@+id/nav_studentwisesubject"
+            android:icon="@drawable/icon_studentsubjects"
+            android:title="@string/menu_studentwisesubjects" />
+        <item
+            android:id="@+id/nav_subjectwiseattendance"
+            android:icon="@drawable/icon_subjectattendance"
+            android:title="@string/menu_subjectwiseattendance" />
+        <item
+            android:id="@+id/nav_cumulativeattendance"
+            android:icon="@drawable/icon_cumulativeattendance"
+            android:title="@string/menu_cumulativeattendance" />
+
+        <item
+            android:id="@+id/nav_hourattendance"
+            android:icon="@drawable/icon_hourattendance"
+            android:title="@string/menu_hourattendance" />
+
+        <item
+            android:id="@+id/nav_intermarks"
+            android:icon="@drawable/icon_internalmarkdetails"
+            android:title="@string/menu_internalmarkdetails" />
+        <item
+            android:id="@+id/nav_examinationdetails"
+            android:icon="@drawable/icon_examdetails"
+            android:title="@string/menu_examinationdetails" />
+        <item
+            android:id="@+id/nav_librarytransactions"
+            android:icon="@drawable/icon_librarytransaction"
+            android:title="@string/menu_librarytransactions" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/icon_notification"
+            android:title="@string/menu_Notification" />
+
+        <item
+            android:id="@+id/nav_changepwd"
+            android:icon="@drawable/icon_changepassword"
+            android:title="@string/menu_changepwd" />
+
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="@string/hLogout" />
+    </group>
+
+</menu>
+    <!--    </androidx.core.widget.NestedScrollView>-->
+    <!--</androidx.cardview.widget.CardView>-->
+
+    <!--</ScrollView>-->

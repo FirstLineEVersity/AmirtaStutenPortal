@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_html"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/layPageHeader"
+        layout="@layout/page_header"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/svinternalmarkdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/layPageHeader"
+        android:scrollbars="vertical">
+        <!--<HorizontalScrollView-->
+            <!--android:outlineAmbientShadowColor="@color/colorGreen"-->
+            <!--android:outlineSpotShadowColor="@color/colorGreen"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="fill_parent">-->
+            <TableLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff"
+                android:stretchColumns="*"
+                android:id="@+id/tblViewInternalmarkdetails">
+            </TableLayout>
+        <!--</HorizontalScrollView>-->
+    </ScrollView>
+    <ScrollView
+        android:id="@+id/svinternalmarkdetailsAbbrevation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/svinternalmarkdetails"
+        android:scrollbars="vertical">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbSubjectAbbrevation">
+    </TableLayout>
+    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txtNoData"
+        android:text="No Data"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="25dp"
+        />
+
+
+    <include
+        android:id="@+id/pageFooter"
+        layout="@layout/page_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

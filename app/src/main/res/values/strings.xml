@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">StudentPortal</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_login">Login</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_personaldetails">Profile</string>
+    <string name="menu_academic">Academic</string>
+    <string name="menu_studentwisesubjects">Subjects</string>
+    <string name="menu_subjectwiseattendance">Attendance</string>
+    <string name="menu_hourattendance">Hour Attendance</string>
+    <string name="menu_cumulativeattendance">Cumulative Attendance</string>
+    <string name="menu_examinationdetails">Examination Details</string>
+    <string name="menu_internalmarkdetails">Internal Mark Details</string>
+    <string name="menu_feesdues">Fees Dues</string>
+    <string name="menu_feespayments">Fees Paid</string>
+    <string name="menu_librarytransactions">Library Transactions</string>
+    <string name="menu_Notification">Notification</string>
+    <string name="menu_changepwd">Change Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_homescreen">Student Portral</string>
+
+    <!-- Login -->
+    <string name="loginTitle">STUDENT PORTAL</string>
+    <string name="loginUserName">User Name</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="loginPowered">Powered by</string>
+    <string name="loginCredentials">Login credentials provided by Collage Administrators</string>
+    <string name="loginPermission">Without permission we check</string>
+    <string name="loginFailed">Login Failed: Not a Valid User Name / Password</string>
+    <string name="loginNoInterNet">You dont have Internet connection</string>
+    <string name="loading">Loading, Please Wait...</string>
+    <string name="install">Install</string>
+    <string name="wsMenuAccessRights">menuAccessRights</string>
+    <string name="hProfile">Profile</string>
+    <string name="hLogout">Logout</string>
+
+    <!-- Profile -->
+    <string name="pStudentName">Stutent Name</string>
+    <string name="pGender">Gender</string>
+    <string name="pDOB">DOB</string>
+    <string name="pRegisterNo">Register No</string>
+    <string name="pInstituton">Institution</string>
+    <string name="pBatch">Batch</string>
+    <string name="pProgram">Program</string>
+    <string name="pSemesterSection">Semester/Section</string>
+    <string name="pAdmittedDate">Admitted Date</string>
+    <string name="pParentName">Parent Name</string>
+    <string name="pAddress">Address</string>
+    <string name="nFrom">From</string>
+    <string name="nDesig">Desig./Depart</string>
+    <string name="nMessage">Message</string>
+    <string name="LIssueDate">Issue Date</string>
+    <string name="LAccNo">Acc. No</string>
+    <string name="LTitle">Title</string>
+    <string name="LDueDate">Due Date</string>
+    <string name="LReturnDate">Return Date</string>
+    <string name="LStatus">Status</string>
+    <string name="LFine">Fine</string>
+
+
+
+
+
+
+</resources>

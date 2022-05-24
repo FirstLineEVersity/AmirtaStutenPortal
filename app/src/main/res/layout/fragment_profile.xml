@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="horizontal"
+    android:scrollbarStyle="outsideInset"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/page_header"/>
+    <ImageView
+        android:id="@+id/imgStudentPhoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/icon_profile" />
+<!--    </android.support.v7.widget.CardView>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="2dp"
+        android:background="@color/colorblue"></View>
+        <!--android:layout_marginStart="148dp"-->
+        <!--android:layout_marginLeft="148dp"-->
+        <!--android:layout_marginEnd="143dp"-->
+        <!--android:layout_marginRight="143dp"-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:scaleType="centerInside"-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@id/imageView3"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="-25dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Vasavi N R S K Baipilla"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@id/textView2"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="-25dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="AP18211010043"-->
+        <!--android:textColor="#5C595C"-->
+        <!--android:textSize="15sp" />-->
+
+    <!--<View-->
+        <!--android:id="@+id/line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="-20dp"-->
+        <!--android:background="#A9A9A9"-->
+        <!--android:gravity="center" />-->
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="1dip"
+        android:paddingRight="1dip">
+        <!--<TableRow>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView3"-->
+                <!--android:layout_width="120dp"-->
+                <!--android:layout_height="120dp"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_marginStart="148dp"-->
+                <!--android:layout_marginLeft="148dp"-->
+                <!--android:layout_marginEnd="143dp"-->
+                <!--android:layout_marginRight="143dp"-->
+                <!--android:scaleType="centerInside"-->
+                <!--app:srcCompat="@drawable/s14277"/>-->
+        <!--</TableRow>-->
+        <!--<TableRow>-->
+            <!--<TextView-->
+                <!--android:id="@+id/txtStudentName"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Vasavi N R S K Baipilla"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold"/>-->
+        <!--</TableRow>-->
+        <!--<TableRow>-->
+            <!--<TextView-->
+                <!--android:id="@+id/txtRegisterNo"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:text="AP18211010043"-->
+                <!--android:textColor="#5C595C"-->
+                <!--android:textSize="15dp"/>-->
+        <!--</TableRow>-->
+        <!--<TableRow>-->
+            <!--<View-->
+                <!--android:id="@+id/line"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#A9A9A9"-->
+                <!--android:gravity="center"/>-->
+        <!--</TableRow>-->
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Student Name"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="School Name"
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblgender"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Gender"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txtGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text=""
+            android:textColor="#5C595C"
+            android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlbldob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="DOB"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtDob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblRegisterNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Register No"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtRegisterNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Register No"
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblschool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Institution"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblbatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batch"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtBatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblprogram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Program"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtProgram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblsemester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Semester / Section"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtSemesterSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Semester Section"
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlbladmitteddate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Admitted Date"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtAdmittedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#5C595C"
+                android:textSize="16dp" />
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlblfather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Parent Name"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvlbladdress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Address"
+                android:textColor="@color/colorblue"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#5C595C"
+                android:textSize="16dp"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblue"></View>
+        <TableRow>
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignBottom="@id/tvlbladdress"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-25dp"
+                android:background="#A9A9A9"
+                android:gravity="center"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView4"-->
+                <!--android:layout_width="119dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_marginStart="148dp"-->
+                <!--android:layout_marginLeft="148dp"-->
+                <!--android:layout_marginEnd="143dp"-->
+                <!--android:layout_marginRight="143dp"                -->
+                <!--android:layout_alignBottom="@id/line1"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginBottom="-60dp"-->
+                <!--app:srcCompat="@drawable/srmlogo" />-->
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
+</ScrollView>
+
+
+
+    <!--<ScrollView android:id="@+id/layout"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scrollbars="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:scrollbarStyle="outsideInset"-->
+    <!--android:fillViewport="true"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+    <!--&lt;!&ndash;<android.support.design.widget.CoordinatorLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:app="http://schemas.android.com/apk/res-auto"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:tools="http://schemas.android.com/tools"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+    <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
+    <!--<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:paddingLeft="1dip"-->
+    <!--android:paddingRight="1dip">-->
+
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView3"-->
+    <!--android:layout_width="120dp"-->
+    <!--android:layout_height="120dp"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginStart="148dp"-->
+    <!--android:layout_marginLeft="148dp"-->
+    <!--android:layout_marginEnd="143dp"-->
+    <!--android:layout_marginRight="143dp"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--android:scaleType="centerInside"-->
+    <!--app:srcCompat="@drawable/s14277" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtStudentName"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/imageView3"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="-25dp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Vasavi N R S K Baipilla"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtRegisterNo"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/txtStudentName"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginBottom="-25dp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="AP18211010043"-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="15sp"/>-->
+
+    <!--<View-->
+    <!--android:id="@+id/line"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_alignBottom="@id/txtRegisterNo"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginBottom="-20dp"-->
+    <!--android:background="#A9A9A9"-->
+    <!--android:gravity="center" />-->
+    <!--</TableRow>-->
+
+
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblschool"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/line"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="School"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold"/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtSchool"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/line"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp"/>-->
+    <!--</TableRow>-->
+    <!--<TableRow android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblbatch"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblschool"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Batch"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold"/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtBatch"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblschool"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblprogram"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblbatch"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Program"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtProgram"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblbatch"-->
+    <!--android:layout_weight="2"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblsemester"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblprogram"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Semester / Section"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtSemesterSection"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblprogram"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlbladmitteddate"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblsemester"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Admitted Date"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtAdmittedDate"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblsemester"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="A"-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlbldob"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlbladmitteddate"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="DOB/Gender"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtDob"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/txtAdmittedDate"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblfather"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlbldob"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Father Name"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtFather"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/txtDob"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlblmother"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblfather"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Mother Name"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtMother"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/txtFather"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvlbladdress"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblmother"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text="Address"-->
+    <!--android:textColor="#00574a"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtAddress"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/tvlblmother"-->
+    <!--android:layout_weight="2"-->
+    <!--android:layout_marginStart="206dp"-->
+    <!--android:layout_marginLeft="206dp"-->
+    <!--android:layout_marginBottom="-35dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#5C595C"-->
+    <!--android:textSize="16sp" />-->
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+    <!--<View-->
+    <!--android:id="@+id/line1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_alignBottom="@id/tvlbladdress"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginBottom="-25dp"-->
+    <!--android:background="#A9A9A9"-->
+    <!--android:gravity="center" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView4"-->
+    <!--android:layout_width="119dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignBottom="@id/line1"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="-60dp"-->
+    <!--app:srcCompat="@drawable/srmlogo" />-->
+    <!--</TableRow>-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+

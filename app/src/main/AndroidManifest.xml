@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.studentinformationshasun"
+    tools:ignore="GoogleAppIndexingWarning">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/slogo51"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar.NoActionBar"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.LoginActivity"
+            android:label="@string/app_name"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.HomePageGridViewLayout"
+            android:label="@string/title_activity_homescreen"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.MainActivity"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.PersonalDetails"
+            android:label="PersonalDetails"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.FeeDetails"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.FinanceDetails"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.StudentWiseSubjects"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.HostelDetails"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.SubjectWiseAttendance"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.CummulativAttendance"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.HourWiseAttendance"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.InternalMarkDetails"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.ExamDetails"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.LibraryTransaction"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.NotificationView"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.example.studentinformationshasun.ChangePassword"
+            android:label="@string/title_activity_main"
+
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"  />
+    </application>
+</manifest>
+
+<!--Server Key for Shasun Student Information ERP fire base project-->
+<!--    AAAAE2TwF94:APA91bHZtO6o2L-Ih1_66ycZBz1hcend0Cf4WY0WHnnTWQ7ZvAPaJSjbD1tlimAxe6-NuRBk_XxbR2lhaGbqesChNNgJ7WECZ4bxSoUFA9aWqhT-RiEjZbpDz2KFrBar0ReTypZO1pwv-->
+

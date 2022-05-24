@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_personaldetails"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_personaldetails" />
+        <item android:id="@+id/nav_home" android:title="@string/menu_academic" >
+            <menu>
+                <item
+                    android:id="@+id/nav_studentwisesubject"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="@string/menu_studentwisesubjects" />
+                <item
+                    android:id="@+id/nav_subjectwiseattendance"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="@string/menu_subjectwiseattendance" />
+                <item
+                    android:id="@+id/nav_cumulativeattendance"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="@string/menu_cumulativeattendance" />
+                <item
+                    android:id="@+id/nav_examinationdetails"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="menu_examinationdetails" />
+            </menu>
+        </item>
+        <item android:id="@+id/nav_finance" android:title="Finance" >
+            <menu>
+                <item
+                    android:id="@+id/nav_feesdues"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_feesdues" />
+                <item
+                    android:id="@+id/nav_feespayments"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="@string/menu_feespayments" />
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_librarytransactions"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_librarytransactions" />
+        </menu>
+    </item>
+</menu>

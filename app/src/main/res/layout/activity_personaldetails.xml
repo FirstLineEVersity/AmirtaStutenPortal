@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/headerView"
+        layout="@layout/page_header"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true" />
+
+
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgStudentPhoto"
+                    android:layout_width="110dp"
+                    android:layout_height="140dp"
+                    android:background="@drawable/image_circle_meroon"
+                    android:padding="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_user_person_24"
+                    ></ImageView>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/textInputLayoutProfile"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtStudentName"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/ic_user_person_24"
+                    android:drawableLeft="@drawable/ic_user_person_24"
+                    android:hint="@string/pStudentName" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtGender"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_gender"
+                    android:drawableLeft="@drawable/p_gender"
+                    android:hint="@string/pGender"
+
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDob"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_dob"
+                    android:drawableLeft="@drawable/p_dob"
+                    android:hint="@string/pDOB"
+
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtRegisterNo"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_reg_no"
+                    android:drawableLeft="@drawable/p_reg_no"
+                    android:hint="@string/pRegisterNo"
+
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtSchool"
+
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_institution"
+                    android:drawableLeft="@drawable/p_institution"
+                    android:hint="@string/pInstituton"
+
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtBatch"
+                    style="@style/textInputProfile"
+                    android:hint="@string/pBatch"
+                    android:drawableStart="@drawable/p_batch"
+                    android:drawableLeft="@drawable/p_batch"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtProgram"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_program"
+                    android:drawableLeft="@drawable/p_program"
+                    android:hint="@string/pProgram"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtSemesterSection"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_department_24"
+                    android:drawableLeft="@drawable/p_department_24"
+                    android:hint="@string/pSemesterSection"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtAdmittedDate"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_dob"
+                    android:drawableLeft="@drawable/p_dob"
+                    android:hint="@string/pAdmittedDate"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtParent"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/ic_user_person_24"
+                    android:drawableLeft="@drawable/ic_user_person_24"
+                    android:hint="@string/pParentName"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout style="@style/textInputLayoutProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtAddress"
+                    style="@style/textInputProfile"
+                    android:drawableStart="@drawable/p_address"
+                    android:drawableLeft="@drawable/p_address"
+                    android:hint="@string/pAddress"
+/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/pageFooter"
+        layout="@layout/page_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

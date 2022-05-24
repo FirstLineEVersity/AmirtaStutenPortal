@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/examdetails_html"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/pageHeader"
+        layout="@layout/page_header"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp">
+
+
+    <ScrollView
+        android:id="@+id/svexamdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tblViewExamdetails"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:stretchColumns="1,2,3">
+        </TableLayout>
+    </ScrollView>
+    <ScrollView
+        android:id="@+id/svexamdetailsAbbrevation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/svexamdetails"
+        android:scrollbars="vertical">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tbExamDetailsSubjectAbbrevation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!--android:layout_marginTop="20dp"-->
+    </TableLayout>
+    </ScrollView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txtNoData"
+        android:text="No Data"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="25dp"
+        />
+
+    <include
+        android:id="@+id/pageFooter"
+        layout="@layout/page_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
