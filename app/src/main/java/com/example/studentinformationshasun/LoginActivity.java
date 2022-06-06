@@ -65,9 +65,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TelephonyManager telephonyManager;
     SqlliteController controllerdb = new SqlliteController(this);
     EncryptDecrypt crypt = new EncryptDecrypt();
-    private static final int UPDATE_REQUEST_CODE = 530;
-    private AppUpdateManager appUpdateManager;
-    long lngEmployeeId = 0;
 
 
     @Override
@@ -76,7 +73,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         dialog = new ProgressDialog(LoginActivity.this);
 
-        inAppUpdate();
 
         FirebaseMessaging.getInstance().subscribeToTopic("evarsity");
         FirebaseInstanceId.getInstance().getInstanceId()
@@ -100,6 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         try {
             Cursor cursor = db.rawQuery("SELECT * FROM studentlogindetails ", null);
             if (cursor.moveToFirst()) {
+
                 SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
                 SharedPreferences.Editor ed = loginsession.edit();
                 do {
@@ -249,14 +246,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         protected Void doInBackground(Void... params) {
             if(android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
-            Log.i("TEST",WebService.METHOD_NAME);
             ResultString = WebService.invokeWS();
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result){
-            Log.i("TEST",ResultString);
             SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
             SharedPreferences.Editor ed = loginsession.edit();
             try{
@@ -308,152 +303,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         finishAffinity();
     }
 
-
-    private void inAppUpdate() {
-        // Creates instance of the manager.
-        appUpdateManager = AppUpdateManagerFactory.create(this);
-
-        // Returns an intent object that you use to check for an update.
-        com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-
-        // Checks that the platform will allow the specified type of update.
-        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
-            @Override
-            public void onSuccess(AppUpdateInfo appUpdateInfo) {
-
-                Log.d("AVAILABLE_VERSION_CODE", appUpdateInfo.availableVersionCode()+"");
-                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                        // For a flexible update, use AppUpdateType.FLEXIBLE
-                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
-                    // Request the update.
-
-                    try {
-                        appUpdateManager.startUpdateFlowForResult(
-                                // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                                appUpdateInfo,
-                                // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
-                                AppUpdateType.FLEXIBLE,
-                                // The current activity making the update request.
-                                LoginActivity.this,
-                                // Include a request code to later monitor this update request.
-                                UPDATE_REQUEST_CODE);
-                    } catch (IntentSender.SendIntentException ignored) {
-
-                    }
-                }
-            }
-        });
-
-        appUpdateManager.registerListener(installStateUpdatedListener);
-
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        appUpdateManager.unregisterListener(installStateUpdatedListener);
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == UPDATE_REQUEST_CODE && resultCode != RESULT_OK ){
-            Toast.makeText(this,"Update Canceled",Toast.LENGTH_LONG).show();
-        }
-    }
-
-    //lambda operation used for below listener
-    InstallStateUpdatedListener installStateUpdatedListener = new InstallStateUpdatedListener() {
-        @Override
-        public void onStateUpdate(@NonNull InstallState installState) {
-            if (installState.installStatus() == InstallStatus.DOWNLOADED) {
-                popupSnackbarForCompleteUpdate();
-            } else
-                Log.e("UPDATE", "Not downloaded yet");
-        }
-    };
-
-
-    private void popupSnackbarForCompleteUpdate() {
-
-        Snackbar snackbar =
-                Snackbar.make(
-                        findViewById(android.R.id.content),
-                        "New app is ready!",
-                        Snackbar.LENGTH_INDEFINITE);
-        //lambda operation used for below action
-        snackbar.setAction(this.getString(R.string.install), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                appUpdateManager.completeUpdate();
-
-                db = controllerdb.getReadableDatabase();
-                try {
-                    Cursor cursor = db.rawQuery("SELECT * FROM stafflogindetails ", null);
-                    if (cursor.moveToFirst()) {
-                        do {
-                            lngEmployeeId = cursor.getLong(cursor.getColumnIndex("employeeid"));
-
-                        } while (cursor.moveToNext());
-                    }
-                    cursor.close();
-                }catch (Exception e){
-
-                }
-                if(lngEmployeeId >0 ) {
-                    if (!CheckNetwork.isInternetAvailable(LoginActivity.this)) {
-                        Toast.makeText(LoginActivity.this, getResources().getString(R.string.loginNoInterNet), Toast.LENGTH_LONG).show();
-                        return;
-                    } else {
-                        WebService.strParameters = new String[]{"Long", "employeeid", String.valueOf(lngEmployeeId)};
-                        WebService.METHOD_NAME = getResources().getString(R.string.wsMenuAccessRights);
-                        AsyncCallWSMenu task = new AsyncCallWSMenu();
-                        task.execute();
-                    }
-                }
-
-            }
-        });
-        snackbar.setActionTextColor(getResources().getColor(R.color.colorWhite));
-        snackbar.show();
-    }
-    private class AsyncCallWSMenu extends AsyncTask<Void, Void, Void> {
-        ProgressDialog dialog = new ProgressDialog(LoginActivity.this);
-
-        @Override
-        protected void onPreExecute() {
-            dialog.setMessage(getResources().getString(R.string.loading));
-            //show dialog
-            dialog.show();
-            //Log.i(TAG, "onPreExecute");
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            //Log.i(TAG, "doInBackground");
-            if (android.os.Debug.isDebuggerConnected())
-                android.os.Debug.waitForDebugger();
-            ResultString = WebService.invokeWS();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // Log.i("TEST", ResultString);
-            if (dialog != null && dialog.isShowing()) {
-                dialog.dismiss();
-            }
-            try {
-                SqlliteController sc = new SqlliteController(LoginActivity.this);
-               // sc.insertMenuidDetails(lngEmployeeId,ResultString);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                Toast.makeText(LoginActivity.this,ResultString,Toast.LENGTH_LONG).show();
-            }
-
-        }
-    }
 
 }
 

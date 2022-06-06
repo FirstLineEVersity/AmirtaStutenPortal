@@ -110,7 +110,6 @@ public class HourWiseAttendance extends AppCompatActivity {
             }
 
         }catch (Exception e){
-            txtNoData.setVisibility(View.VISIBLE);
 
             System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
@@ -118,6 +117,8 @@ public class HourWiseAttendance extends AppCompatActivity {
             WebService.METHOD_NAME = "getHourwiseAttendance";
             AsyncCallWS task = new AsyncCallWS();
             task.execute();
+            txtNoData.setVisibility(View.VISIBLE);
+
         }
     }
 

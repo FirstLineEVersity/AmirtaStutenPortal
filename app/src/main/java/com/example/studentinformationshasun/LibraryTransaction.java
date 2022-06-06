@@ -132,13 +132,14 @@ public class LibraryTransaction extends AppCompatActivity {
             }
         }catch (Exception e){
 
-            txtNoData.setVisibility(View.VISIBLE);
             System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getLibraryTransaction";
             AsyncCallWS task = new AsyncCallWS();
             task.execute();
+            txtNoData.setVisibility(View.VISIBLE);
+
         }
     }
 

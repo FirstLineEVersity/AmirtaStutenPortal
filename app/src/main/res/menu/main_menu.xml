@@ -27,20 +27,6 @@
             android:icon="@drawable/icon_studentsubjects"
             android:title="@string/menu_studentwisesubjects" />
         <item
-            android:id="@+id/nav_subjectwiseattendance"
-            android:icon="@drawable/icon_subjectattendance"
-            android:title="@string/menu_subjectwiseattendance" />
-        <item
-            android:id="@+id/nav_cumulativeattendance"
-            android:icon="@drawable/icon_cumulativeattendance"
-            android:title="@string/menu_cumulativeattendance" />
-
-        <item
-            android:id="@+id/nav_hourattendance"
-            android:icon="@drawable/icon_hourattendance"
-            android:title="@string/menu_hourattendance" />
-
-        <item
             android:id="@+id/nav_intermarks"
             android:icon="@drawable/icon_internalmarkdetails"
             android:title="@string/menu_internalmarkdetails" />
@@ -57,11 +43,31 @@
             android:icon="@drawable/icon_notification"
             android:title="@string/menu_Notification" />
 
+
+        <item
+            android:id="@+id/nav_subjectwiseattendance"
+            android:icon="@drawable/icon_subjectattendance"
+            android:title="@string/menu_subjectwiseattendance" />
+
+        <item
+            android:id="@+id/nav_hourattendance"
+            android:icon="@drawable/icon_hourattendance"
+            android:title="@string/menu_hourattendance" />
+
+        <item
+            android:id="@+id/nav_cumulativeattendance"
+            android:icon="@drawable/icon_cumulativeattendance"
+            android:title="@string/menu_cumulativeattendance" />
+
         <item
             android:id="@+id/nav_changepwd"
             android:icon="@drawable/icon_changepassword"
             android:title="@string/menu_changepwd" />
 
+        <item
+            android:id="@+id/nav_other_details"
+            android:icon="@drawable/icon_studentsubjects"
+            android:title="@string/menu_other_details" />
 
         <item
             android:id="@+id/nav_logout"

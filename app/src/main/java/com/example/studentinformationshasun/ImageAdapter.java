@@ -70,8 +70,41 @@ public class ImageAdapter extends BaseAdapter {
         TextView textView;
         ImageView imageView;
     }
+    public Integer[] mThumbIds = {
+            R.drawable.icon_personaldetails,
+            R.drawable.icon_feedetails,
+            R.drawable.icon_financedetails,
+            R.drawable.icon_studentsubjects,
+            R.drawable.icon_internalmarkdetails,
+            R.drawable.icon_examdetails,
+            R.drawable.icon_librarytransaction,
+            R.drawable.icon_notification,
+            R.drawable.icon_subjectattendance,
+            R.drawable.icon_hourattendance,
+            R.drawable.icon_cumulativeattendance,
+            R.drawable.icon_changepassword,
+            R.drawable.icon_studentsubjects,
+            R.drawable.icon_exit
+    };
 
+    public String[] web = {
+            "Profile",
+            "Fee Dues",
+            "Fee Paid",
+            "Subjects",
+            "Internal Marks",
+            "Exam Details",
+            "Library Trans.",
+            "Notifications",
+            "Attendance",
+            "Hour Attendance",
+            "Cummulative Attendance",
+            "Change Password",
+            "Other Details",
+            "Logout"
+    };
     // Keep all Images in array
+    /*
     public Integer[] mThumbIds = {
             R.drawable.icon_personaldetails,R.drawable.icon_feedetails,
             R.drawable.icon_financedetails,R.drawable.icon_studentsubjects,
@@ -101,5 +134,7 @@ public class ImageAdapter extends BaseAdapter {
             "Change Password",
             "Logout"
     };
+
+     */
 }
 

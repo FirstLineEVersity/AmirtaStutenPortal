@@ -13,14 +13,18 @@
     <string name="menu_subjectwiseattendance">Attendance</string>
     <string name="menu_hourattendance">Hour Attendance</string>
     <string name="menu_cumulativeattendance">Cumulative Attendance</string>
-    <string name="menu_examinationdetails">Examination Details</string>
-    <string name="menu_internalmarkdetails">Internal Mark Details</string>
-    <string name="menu_feesdues">Fees Dues</string>
-    <string name="menu_feespayments">Fees Paid</string>
-    <string name="menu_librarytransactions">Library Transactions</string>
-    <string name="menu_Notification">Notification</string>
+    <string name="menu_examinationdetails">Exam Details</string>
+    <string name="menu_internalmarkdetails">Internal Marks</string>
+    <string name="menu_feesdues">Fee Dues</string>
+    <string name="menu_feespayments">Fee Paid</string>
+    <string name="menu_librarytransactions">Library Trans.</string>
+    <string name="menu_Notification">Notifications</string>
     <string name="menu_changepwd">Change Password</string>
+    <string name="Update">Update</string>
 
+    <string name="menu_other_details">Other Details</string>
+
+    <string name="fheventname">Event Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_homescreen">Student Portral</string>
 
