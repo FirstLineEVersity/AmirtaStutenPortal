@@ -38,10 +38,10 @@ public class EventDisplayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eventvideoviewlist);
-        TextView tvPageTitle = (TextView) findViewById(R.id.pageTitle);
+        TextView tvPageTitle = findViewById(R.id.pageTitle);
         tvPageTitle.setText(getResources().getString(R.string.menu_other_details));
-        Button btnBack=(Button) findViewById(R.id.button_back);
-        Button btnRefresh=(Button) findViewById(R.id.button_refresh);
+        Button btnBack= findViewById(R.id.button_back);
+        Button btnRefresh= findViewById(R.id.button_refresh);
         btnRefresh.setVisibility(View.INVISIBLE);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class EventDisplayActivity extends AppCompatActivity {
         WebService.strParameters = new String[]{"Long", "name", String.valueOf(lngStudentId)};
         WebService.METHOD_NAME = "getUpcomingEventsforStudents";
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.rvVideoList);
+        mRecyclerView = findViewById(R.id.rvVideoList);
         if (!CheckNetwork.isInternetAvailable(EventDisplayActivity.this)) {
             Toast.makeText(EventDisplayActivity.this, getResources().getString(R.string.loginNoInterNet), Toast.LENGTH_LONG).show();
         } else {
