@@ -57,9 +57,13 @@ public class HourWiseAttendance extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getHourwiseAttendance";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(HourWiseAttendance.this)) {
+                    AsyncCallWS task =new  AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(HourWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }  }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
         lngStudentId = loginsession.getLong("userid", 1);
@@ -100,25 +104,29 @@ public class HourWiseAttendance extends AppCompatActivity {
                 } while (cursor.moveToNext());
                 cursor.close();
             } else {
-                txtNoData.setVisibility(View.VISIBLE);
-
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getHourwiseAttendance";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(HourWiseAttendance.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(HourWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }}
 
         }catch (Exception e){
 
-            System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getHourwiseAttendance";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            txtNoData.setVisibility(View.VISIBLE);
+            if (CheckNetwork.isInternetAvailable(HourWiseAttendance.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
 
+            } else {
+                Toast.makeText(HourWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -130,12 +138,10 @@ public class HourWiseAttendance extends AppCompatActivity {
             dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -144,10 +150,6 @@ public class HourWiseAttendance extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result){
-            Log.i(TAG, "onPostExecute");
-            if (dialog != null && dialog.isShowing()) {
-                dialog.dismiss();
-            }
             try{
                 JSONObject jsonObject = new JSONObject(ResultString);
                 if (jsonObject.getString("Status").equals("Error"))
@@ -186,8 +188,11 @@ public class HourWiseAttendance extends AppCompatActivity {
                 }
 
                 Toast.makeText(HourWiseAttendance.this, "Response: " + strResultMessage, Toast.LENGTH_LONG).show();
-                System.out.println(e.getMessage());
             }
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+
         }
     }
 

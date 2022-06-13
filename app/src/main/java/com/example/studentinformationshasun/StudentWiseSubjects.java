@@ -63,8 +63,13 @@ public class StudentWiseSubjects extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getSubjects";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
+                if (CheckNetwork.isInternetAvailable(StudentWiseSubjects.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(StudentWiseSubjects.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
@@ -97,24 +102,30 @@ public class StudentWiseSubjects extends AppCompatActivity {
 //                    addAbbrivationData(strAbbreviation);
                 } while (cursor.moveToNext());
             } else {
-                txtNoData.setVisibility(View.VISIBLE);
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getSubjects";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(StudentWiseSubjects.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(StudentWiseSubjects.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                } }
             cursor.close();
         } catch (Exception e) {
-            txtNoData.setVisibility(View.VISIBLE);
 
             System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getSubjects";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-        }
+            if (CheckNetwork.isInternetAvailable(StudentWiseSubjects.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(StudentWiseSubjects.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }}
     }
 
     private class AsyncCallWS extends AsyncTask<Void, Void, Void> {
@@ -125,12 +136,10 @@ public class StudentWiseSubjects extends AppCompatActivity {
             dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            Log.i(TAG, "onPreExecute");
-        }
+            }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -139,10 +148,6 @@ public class StudentWiseSubjects extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            Log.i(TAG, "onPostExecute");
-            if (dialog != null && dialog.isShowing()) {
-                dialog.dismiss();
-            }
             try {
                 JSONObject jsonObject = new JSONObject(ResultString);
                 if (jsonObject.getString("Status").equals("Error"))
@@ -171,6 +176,10 @@ public class StudentWiseSubjects extends AppCompatActivity {
 txtNoData.setText(strResultMessage);
                 Toast.makeText(StudentWiseSubjects.this, "Response: " + strResultMessage, Toast.LENGTH_LONG).show();
             }
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+
         }
     }
 

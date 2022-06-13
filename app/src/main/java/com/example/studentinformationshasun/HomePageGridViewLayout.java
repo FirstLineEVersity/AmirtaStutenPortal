@@ -3,7 +3,6 @@ package com.example.studentinformationshasun;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,7 +15,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -50,13 +48,12 @@ import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 
 import webservice.SqlliteController;
-import webservice.WebService;
 
 public class HomePageGridViewLayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private final String strEmployee = "";
     SQLiteDatabase db;
     SqlliteController controllerdb = new SqlliteController(this);
-    private long lngEmployeeId = 0;
+    private long lngStudentId = 0;
     ImageView imageView;
     GridView grid;
     private static final int UPDATE_REQUEST_CODE = 530;
@@ -72,7 +69,7 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
-        lngEmployeeId = loginsession.getLong("userid", 1);
+        lngStudentId = loginsession.getLong("userid", 1);
         //Status Bar Color
         StatusColor.SetStatusColor(getWindow(), ContextCompat.getColor(this, R.color.colorblue));
         if (snackbar != null)
@@ -216,7 +213,7 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
 
                         }
                         if (position == 12) {
-                            Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
+                            Intent intent = new Intent(HomePageGridViewLayout.this, EventDisplayActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
@@ -306,103 +303,105 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
 
         int id = item.getItemId();
         Toolbar toolbar = findViewById(R.id.toolbar);
-//        if (CheckNetwork.isInternetAvailable(HomePageGridViewLayout.this)) {
-//            Toast.makeText(HomePageGridViewLayout.this,"You dont have Internet connection", Toast.LENGTH_LONG).show();
-//        }
-        if (id == R.id.nav_personaldetails) {
-            toolbar.setTitle(getResources().getString(R.string.hProfile));
-            Intent intent = new Intent(HomePageGridViewLayout.this, PersonalDetails.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-            //fragmentClass = ProfileFragment.class;
+       if (!CheckNetwork.isInternetAvailable(HomePageGridViewLayout.this)) {
+            Toast.makeText(HomePageGridViewLayout.this,"You dont have Internet connection", Toast.LENGTH_LONG).show();
+        }else {
+           if (id == R.id.nav_personaldetails) {
+               toolbar.setTitle(getResources().getString(R.string.hProfile));
+               Intent intent = new Intent(HomePageGridViewLayout.this, PersonalDetails.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+               //fragmentClass = ProfileFragment.class;
 //            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                    new ProfileFragment()).commit();
-        } else if (id == R.id.nav_feesdues) {
-            toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
-            Intent intent = new Intent(HomePageGridViewLayout.this, FeeDetails.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+           } else if (id == R.id.nav_feesdues) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, FeeDetails.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_feespayments) {
-            toolbar.setTitle(getResources().getString(R.string.menu_feespayments));
-            Intent intent = new Intent(HomePageGridViewLayout.this, FinanceDetails.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_feespayments) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feespayments));
+               Intent intent = new Intent(HomePageGridViewLayout.this, FinanceDetails.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_studentwisesubject) {
-            toolbar.setTitle(getResources().getString(R.string.menu_studentwisesubjects));
-            Intent intent = new Intent(HomePageGridViewLayout.this, StudentWiseSubjects.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_studentwisesubject) {
+               toolbar.setTitle(getResources().getString(R.string.menu_studentwisesubjects));
+               Intent intent = new Intent(HomePageGridViewLayout.this, StudentWiseSubjects.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_subjectwiseattendance) {
-            toolbar.setTitle(getResources().getString(R.string.menu_subjectwiseattendance));
-            Intent intent = new Intent(HomePageGridViewLayout.this, SubjectWiseAttendance.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_subjectwiseattendance) {
+               toolbar.setTitle(getResources().getString(R.string.menu_subjectwiseattendance));
+               Intent intent = new Intent(HomePageGridViewLayout.this, SubjectWiseAttendance.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_cumulativeattendance) {
-            toolbar.setTitle(getResources().getString(R.string.menu_cumulativeattendance));
-            Intent intent = new Intent(HomePageGridViewLayout.this, CummulativAttendance.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_cumulativeattendance) {
+               toolbar.setTitle(getResources().getString(R.string.menu_cumulativeattendance));
+               Intent intent = new Intent(HomePageGridViewLayout.this, CummulativAttendance.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_hourattendance) {
-            toolbar.setTitle(getResources().getString(R.string.menu_hourattendance));
-            Intent intent = new Intent(HomePageGridViewLayout.this, HourWiseAttendance.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_hourattendance) {
+               toolbar.setTitle(getResources().getString(R.string.menu_hourattendance));
+               Intent intent = new Intent(HomePageGridViewLayout.this, HourWiseAttendance.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_intermarks) {
-            toolbar.setTitle(getResources().getString(R.string.menu_internalmarkdetails));
-            Intent intent = new Intent(HomePageGridViewLayout.this, InternalMarkDetails.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_intermarks) {
+               toolbar.setTitle(getResources().getString(R.string.menu_internalmarkdetails));
+               Intent intent = new Intent(HomePageGridViewLayout.this, InternalMarkDetails.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_examinationdetails) {
-            toolbar.setTitle(getResources().getString(R.string.menu_examinationdetails));
-            Intent intent = new Intent(HomePageGridViewLayout.this, ExamDetails.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_examinationdetails) {
+               toolbar.setTitle(getResources().getString(R.string.menu_examinationdetails));
+               Intent intent = new Intent(HomePageGridViewLayout.this, ExamDetails.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_librarytransactions) {
-            toolbar.setTitle(getResources().getString(R.string.menu_librarytransactions));
-            Intent intent = new Intent(HomePageGridViewLayout.this, LibraryTransaction.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_librarytransactions) {
+               toolbar.setTitle(getResources().getString(R.string.menu_librarytransactions));
+               Intent intent = new Intent(HomePageGridViewLayout.this, LibraryTransaction.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_notifications) {
-            toolbar.setTitle(getResources().getString(R.string.menu_Notification));
-            Intent intent = new Intent(HomePageGridViewLayout.this, NotificationView.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_notifications) {
+               toolbar.setTitle(getResources().getString(R.string.menu_Notification));
+               Intent intent = new Intent(HomePageGridViewLayout.this, NotificationView.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
+               startActivity(intent);
 
-        } else if (id == R.id.nav_changepwd) {
-            toolbar.setTitle(getResources().getString(R.string.menu_changepwd));
-            Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+           } else if (id == R.id.nav_changepwd) {
+               toolbar.setTitle(getResources().getString(R.string.menu_changepwd));
+               Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_other_details) {
-            toolbar.setTitle(getResources().getString(R.string.menu_other_details));
-            Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+           } else if (id == R.id.nav_other_details) {
+               toolbar.setTitle(getResources().getString(R.string.menu_other_details));
+               Intent intent = new Intent(HomePageGridViewLayout.this, EventDisplayActivity.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            startActivity(intent);
-        } else if (id == R.id.nav_logout) {
-            SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("SessionLogin", MODE_PRIVATE);
-            SharedPreferences.Editor editor = myPrefs.edit();
-            editor.clear();
-            editor.commit();
-            SqlliteController sc = new SqlliteController(getApplicationContext());
-            //sc.deleteLoginStaffDetails();
-            Intent intent = new Intent(HomePageGridViewLayout.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
+               startActivity(intent);
+           } else if (id == R.id.nav_logout) {
+               SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("SessionLogin", MODE_PRIVATE);
+               SharedPreferences.Editor editor = myPrefs.edit();
+               editor.clear();
+               editor.commit();
+               SqlliteController sc = new SqlliteController(getApplicationContext());
+               //sc.deleteLoginStaffDetails();
+               Intent intent = new Intent(HomePageGridViewLayout.this, MainActivity.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+               finish();
+           }
+       }
 
         try {
             fragment = (Fragment) fragmentClass.newInstance();

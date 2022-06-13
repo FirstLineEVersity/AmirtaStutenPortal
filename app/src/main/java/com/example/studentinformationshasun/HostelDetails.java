@@ -62,8 +62,13 @@ public class HostelDetails extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getHostelDetails";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
+                if (CheckNetwork.isInternetAvailable(HostelDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(HostelDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
@@ -90,8 +95,13 @@ public class HostelDetails extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getHostelDetails";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
+                if (CheckNetwork.isInternetAvailable(HostelDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(HostelDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
             cursor.close();
             if (hostel_list.size() == 0) {
@@ -110,9 +120,13 @@ public class HostelDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getHostelDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-        }
+            if (CheckNetwork.isInternetAvailable(HostelDetails.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(HostelDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }}
     }
 
     private class AsyncCallWS extends AsyncTask<Void, Void, Void> {
