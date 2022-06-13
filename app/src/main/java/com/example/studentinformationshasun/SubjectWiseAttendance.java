@@ -61,9 +61,13 @@ public class SubjectWiseAttendance extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getSubjectwiseAttendance";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(SubjectWiseAttendance.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(SubjectWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                } }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
         lngStudentId = loginsession.getLong("userid", 1);
@@ -97,25 +101,30 @@ public class SubjectWiseAttendance extends AppCompatActivity {
                 } while (cursor.moveToNext());
                   addLegend();
             } else {
-                txtNoData.setVisibility(View.VISIBLE);
 
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getSubjectwiseAttendance";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(SubjectWiseAttendance.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(SubjectWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }  }
             cursor.close();
         }catch (Exception e){
 
-            System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getSubjectwiseAttendance";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            txtNoData.setVisibility(View.VISIBLE);
+            if (CheckNetwork.isInternetAvailable(SubjectWiseAttendance.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
 
+            } else {
+                Toast.makeText(SubjectWiseAttendance.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -127,12 +136,10 @@ public class SubjectWiseAttendance extends AppCompatActivity {
             dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -141,10 +148,6 @@ public class SubjectWiseAttendance extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result){
-            Log.i(TAG, "onPostExecute");
-            if (dialog != null && dialog.isShowing()) {
-                dialog.dismiss();
-            }
             try{
                 JSONObject jsonObject = new JSONObject(ResultString);
                 if (jsonObject.getString("Status").equals("Error"))
@@ -178,6 +181,10 @@ public class SubjectWiseAttendance extends AppCompatActivity {
                     Toast.makeText(SubjectWiseAttendance.this, "Response: "+strResultMessage, Toast.LENGTH_LONG).show();
                 System.out.println(e.getMessage());
             }
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+
         }
     }
 

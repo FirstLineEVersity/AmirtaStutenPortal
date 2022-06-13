@@ -66,8 +66,13 @@ public class PersonalDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getPersonalDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
+                if (CheckNetwork.isInternetAvailable(PersonalDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(PersonalDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
@@ -140,8 +145,13 @@ public class PersonalDetails extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getPersonalDetails";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
+                if (CheckNetwork.isInternetAvailable(PersonalDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(PersonalDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
             cursor.close();
         }catch (Exception e){
@@ -149,8 +159,13 @@ public class PersonalDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getPersonalDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
+            if (CheckNetwork.isInternetAvailable(PersonalDetails.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(PersonalDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

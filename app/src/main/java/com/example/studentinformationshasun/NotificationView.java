@@ -112,7 +112,6 @@ public class NotificationView extends AppCompatActivity {
                 }
             } else {
 
-                txtNoData.setVisibility(View.VISIBLE);
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getViewNotificationListJson";
@@ -122,8 +121,6 @@ public class NotificationView extends AppCompatActivity {
             cursor.close();
         }catch (Exception e){
 
-            txtNoData.setVisibility(View.VISIBLE);
-            System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getViewNotificationListJson";
@@ -140,12 +137,10 @@ public class NotificationView extends AppCompatActivity {
             dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -154,7 +149,6 @@ public class NotificationView extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result){
-            Log.i(TAG, "onPostExecute");
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
             }
@@ -182,8 +176,11 @@ public class NotificationView extends AppCompatActivity {
                 txtNoData.setVisibility(View.VISIBLE);
                 txtNoData.setText(strResultMessage);
                 Toast.makeText(NotificationView.this, "Response: " + strResultMessage, Toast.LENGTH_LONG).show();
-                System.out.println(e.getMessage());
             }
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+
         }
     }
 }

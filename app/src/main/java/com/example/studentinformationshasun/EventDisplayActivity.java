@@ -52,15 +52,14 @@ public class EventDisplayActivity extends AppCompatActivity {
         txtNoData = findViewById(R.id.txtNoData);
 
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
-       long lngEmployeeId = loginsession.getLong("userid", 1);
+       long lngStudentId = loginsession.getLong("userid", 1);
 
-        WebService.strParameters = new String[]{"Long", "employeeid", String.valueOf(lngEmployeeId)};
-        WebService.METHOD_NAME = "getUpcomingEvents";
+        WebService.strParameters = new String[]{"Long", "name", String.valueOf(lngStudentId)};
+        WebService.METHOD_NAME = "getUpcomingEventsforStudents";
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rvVideoList);
         if (!CheckNetwork.isInternetAvailable(EventDisplayActivity.this)) {
             Toast.makeText(EventDisplayActivity.this, getResources().getString(R.string.loginNoInterNet), Toast.LENGTH_LONG).show();
-            return;
         } else {
 
             AsyncCallWS task = new AsyncCallWS();
@@ -89,8 +88,7 @@ public class EventDisplayActivity extends AppCompatActivity {
             dialog.setMessage(getResources().getString(R.string.loading));
             //show dialog
             dialog.show();
-            //Log.i(TAG, "onPreExecute");
-        }
+         }
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -103,43 +101,27 @@ public class EventDisplayActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
+            Log.i("TEST : ", WebService.METHOD_NAME );
+            Log.i("TEST : ",ResultString );
+
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
             }
-            leavestatus_list.clear();
-            Log.i("TEST",ResultString);
-            // {"Status":"Success","Message":"","Data":
-            // [{"venue":"Outside Campus","startsat":"01-10-2020  12:12","imageactualname":"",
-            // "imagefilename":"","endsat":"01-10-2020 12:12","eventname":"qeqwqwqw","status":"No"
-            // ,"youtubelinkurl":"qweqw"},
-            // {"venue":"Computer Lab 3-Building 2","startsat":"05-04-2022  13:17",
-            // "imageactualname":"Final Poster - Software Testing.pdf","imagefilename":"temp_83066_2
-            // 022_4_5_13_18_638","endsat":"05-04-2022 21:00","eventname":"test enty","status":"No",
-            // "youtubelinkurl":""},
-            // {"venue":"Basement Multipurpose Hall-Building 3","startsat":"02-05-2022  15:37"
-            // ,"imageactualname":"Shasun Bazaar - Stall Registration Form.pdf",
-            // "imagefilename":"temp_91426_2022_5_2_15_39_911","endsat":"02-05-2022 15:37",
-            // "eventname":"Depatment Day","status":"Non Paid Registration","youtubelinkurl":""},
-            // {"venue":"Abhayas Hall-Building 2","startsat":"19-05-2022  10:00","imageactualname":"INVITE (7).pdf",
-            // "imagefilename":"temp_100361_2022_5_18_10_6_431","endsat":"19-05-2022 12:00","eventname":"test",
-            // "status":"Non Paid Registration","youtubelinkurl":"test"},
-            // {"venue":"Seminar Hall-Building 2","startsat":"31-05-2022  09:00","imageactualname":"
-            // Tulips.jpg","imagefilename":"temp_91758_2022_5_3_8_43_3","endsat":"31-05-2022 12:00",
-            // "eventname":"test1","status":"No","youtubelinkurl":""},{"venue":"Seminar Hall-Building 2","
-            // startsat":"31-05-2022  09:00","imageactualname":"Tulips.jpg","imagefilename":"temp_91759_2022_5_3_8_44_864","endsat":"31-05-2022 12:00","eventname":"test2","status":"No","youtubelinkurl":""},{"venue":"Seminar Hall-Building 2","startsat":"31-05-2022  09:00","imageactualname":"","imagefilename":"","endsat":"31-05-2022 12:30","eventname":"test","status":"Paid Registartion-Rs.500","youtubelinkurl":""},{"venue":"Seminar Hall-Building 2","startsat":"31-05-2022  10:00","imageactualname":"Tulips.jpg","imagefilename":"temp_91852_2022_5_3_12_18_635","endsat":"31-05-2022 12:00","eventname":"test","status":"No","youtubelinkurl":""}]}
+            if(ResultString.length()>1) {
+                leavestatus_list.clear();
 
-            try {
-                JSONObject JSobject = new JSONObject(ResultString);
-                if(JSobject.has("Status") && JSobject.getString("Status").equalsIgnoreCase("Success")) {
-                    JSONArray temp = new JSONArray(JSobject.getString("Data"));
+                try {
+                    JSONObject JSobject = new JSONObject(ResultString);
+                    if (JSobject.has("Status") && JSobject.getString("Status").equalsIgnoreCase("Success")) {
+                        JSONArray temp = new JSONArray(JSobject.getString("Data"));
 
                         for (int i = 0; i <= temp.length() - 1; i++) {
                             JSONObject object = new JSONObject(temp.getJSONObject(i).toString());
-                            if(object.getString("youtubelinkurl").length() >0){
+                            if (object.getString("youtubelinkurl").length() > 0) {
                                 String test = "https://www.youtube.com/embed/Cs3caRySDq4";
                                 //youTubeVideos.add(new YouTubeVideos("<html><body><font size=8><b>"+test+"</b></font><br><iframe width=\"100%\" height=\"100%\" src="+test+" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></body></html>") );
-                                youTubeVideos.add(new YouTubeVideos("<html><body><font size=8><b>"+object.getString("eventname")+"</b></font><br><iframe width=\"100%\" height=\"100%\" src="+object.getString("youtubelinkurl")+" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></body></html>") );
-                            }else {
+                                youTubeVideos.add(new YouTubeVideos("<html><body><font size=8><b>" + object.getString("eventname") + "</b></font><br><iframe width=\"100%\" height=\"100%\" src=" + object.getString("youtubelinkurl") + " allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></body></html>"));
+                            } else {
                                 String fileName = " - ";
                                 if (object.getString("imageactualname").length() > 0) {
                                     fileName = object.getString("imageactualname");
@@ -154,8 +136,8 @@ public class EventDisplayActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                        if(leavestatus_list.size() > 0 || youTubeVideos.size() > 0 ) {
-                          //  Log.i("TEST","eventname" + "##" );
+                        if (leavestatus_list.size() > 0 || youTubeVideos.size() > 0) {
+                            //  Log.i("TEST","eventname" + "##" );
                             mRecyclerView.setVisibility(View.VISIBLE);
                             txtNoData.setVisibility(View.GONE);
 
@@ -163,35 +145,37 @@ public class EventDisplayActivity extends AppCompatActivity {
                             mRecyclerView.setLayoutManager(mLayoutManager);
                             EventsAdapter TVA = new EventsAdapter(leavestatus_list, R.layout.eventslistitem);
                             TVA.notifyDataSetChanged();
-                           // mRecyclerView.setAdapter(TVA);
+                            // mRecyclerView.setAdapter(TVA);
                             videoAdapter = new VideoAdapter(youTubeVideos);
 
-                            ConcatAdapter concatAdapter = new ConcatAdapter(TVA,videoAdapter);
+                            ConcatAdapter concatAdapter = new ConcatAdapter(TVA, videoAdapter);
                             mRecyclerView.setAdapter(concatAdapter);
 
 
-                        }else {
+                        } else {
                             mRecyclerView.setVisibility(View.GONE);
                             txtNoData.setVisibility(View.VISIBLE);
 
                         }
 
 
-
-                }else{
+                    } else {
+                        mRecyclerView.setVisibility(View.GONE);
+                        txtNoData.setVisibility(View.VISIBLE);
+                        txtNoData.setText(JSobject.getString("Message"));
+                        Toast.makeText(EventDisplayActivity.this, JSobject.getString("Message"), Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                     mRecyclerView.setVisibility(View.GONE);
                     txtNoData.setVisibility(View.VISIBLE);
-                    txtNoData.setText(JSobject.getString("Message"));
-                    Toast.makeText(EventDisplayActivity.this,JSobject.getString("Message"),Toast.LENGTH_LONG).show();
+                    txtNoData.setText(ResultString);
+                    Toast.makeText(EventDisplayActivity.this, ResultString, Toast.LENGTH_LONG).show();
                 }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            }else{
                 mRecyclerView.setVisibility(View.GONE);
                 txtNoData.setVisibility(View.VISIBLE);
-                txtNoData.setText(ResultString);
-                Toast.makeText(EventDisplayActivity.this,ResultString,Toast.LENGTH_LONG).show();
             }
-
         }
     }
 

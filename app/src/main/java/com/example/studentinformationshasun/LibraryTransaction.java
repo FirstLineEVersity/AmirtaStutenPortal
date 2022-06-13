@@ -60,9 +60,13 @@ public class LibraryTransaction extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getLibraryTransaction";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(LibraryTransaction.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(LibraryTransaction.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }  }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
         lngStudentId = loginsession.getLong("userid", 1);
@@ -102,9 +106,13 @@ public class LibraryTransaction extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getLibraryTransaction";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(LibraryTransaction.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(LibraryTransaction.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                } }
             cursor.close();
 
             cursor = db.rawQuery("SELECT * FROM librarytransaction WHERE studentid=" + lngStudentId, null);
@@ -136,9 +144,13 @@ public class LibraryTransaction extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getLibraryTransaction";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            txtNoData.setVisibility(View.VISIBLE);
+            if (CheckNetwork.isInternetAvailable(LibraryTransaction.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(LibraryTransaction.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            } txtNoData.setVisibility(View.VISIBLE);
 
         }
     }

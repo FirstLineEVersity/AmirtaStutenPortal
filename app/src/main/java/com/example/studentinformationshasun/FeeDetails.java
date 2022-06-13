@@ -65,8 +65,13 @@ public class FeeDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getFeeDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
+                if (CheckNetwork.isInternetAvailable(FeeDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(FeeDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
@@ -117,8 +122,13 @@ public class FeeDetails extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getFeeDetails";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
+                if (CheckNetwork.isInternetAvailable(FeeDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(FeeDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }
             }
             cursor.close();
         }catch (Exception e){
@@ -126,9 +136,13 @@ public class FeeDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getFeeDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-        }
+            if (CheckNetwork.isInternetAvailable(FeeDetails.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(FeeDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }        }
     }
 
     private class AsyncCallWS extends AsyncTask<Void, Void, Void> {

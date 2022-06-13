@@ -61,9 +61,13 @@ public class InternalMarkDetails extends AppCompatActivity {
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getInternalMarkDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(InternalMarkDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(InternalMarkDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }  }
         });
         final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
         lngStudentId = loginsession.getLong("userid", 1);
@@ -99,17 +103,26 @@ public class InternalMarkDetails extends AppCompatActivity {
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getInternalMarkDetails";
-                AsyncCallWS task = new AsyncCallWS();
-                task.execute();
-            }
+                if (CheckNetwork.isInternetAvailable(InternalMarkDetails.this)) {
+                    AsyncCallWS task = new AsyncCallWS();
+                    task.execute();
+
+                } else {
+                    Toast.makeText(InternalMarkDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+                }          }
             cursor.close();
         }catch (Exception e){
             System.out.println(e.getMessage());
             strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
             WebService.strParameters = strParameters;
             WebService.METHOD_NAME = "getInternalMarkDetails";
-            AsyncCallWS task = new AsyncCallWS();
-            task.execute();
+            if (CheckNetwork.isInternetAvailable(InternalMarkDetails.this)) {
+                AsyncCallWS task = new AsyncCallWS();
+                task.execute();
+
+            } else {
+                Toast.makeText(InternalMarkDetails.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -121,12 +134,10 @@ public class InternalMarkDetails extends AppCompatActivity {
             dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -135,7 +146,6 @@ public class InternalMarkDetails extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result){
-            Log.i(TAG, "onPostExecute");
             if (dialog != null && dialog.isShowing()){
                 dialog.dismiss();
             }
