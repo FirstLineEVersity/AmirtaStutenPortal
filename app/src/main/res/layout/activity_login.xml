@@ -56,7 +56,7 @@
                         android:id="@+id/usernameInput"
                         android:hint="@string/loginUserName"
                         android:drawableLeft="@drawable/ic_user_person_24"
-                        android:text="211904178"
+                        android:text=""
 
                         />
 
@@ -79,7 +79,7 @@
                         android:drawableLeft="@drawable/ic_password_24"
                         android:drawableStart="@drawable/ic_password_24"
                         android:inputType="textPassword"
-                        android:text="06122001"/>
+                        android:text=""/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 

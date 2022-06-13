@@ -38,7 +38,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
         public VideoViewHolder(View itemView){
             super (itemView);
-            videoWeb = (WebView) itemView.findViewById(R.id.videoWebView);
+            videoWeb = itemView.findViewById(R.id.videoWebView);
             videoWeb.getSettings().setJavaScriptEnabled(true);
             videoWeb.loadUrl("http://www.youtube.com/");
             videoWeb.setWebChromeClient(new WebChromeClient(){
