@@ -1,5 +1,8 @@
 package com.shasun.studentinformationshasun;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -7,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,9 +20,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
@@ -27,9 +28,11 @@ import java.util.ArrayList;
 
 import webservice.WebService;
 
+import static android.content.ContentValues.TAG;
+
 public class MenuOrderPlacing extends AppCompatActivity {
     private static String ResultString = "";
-    private static String[] strParameters;
+    private static String strParameters[];
     ListView lstMenu;
     TextView tvTotal;
     int[] lMenuId;
@@ -44,25 +47,22 @@ public class MenuOrderPlacing extends AppCompatActivity {
     ArrayList<String> alMenuItems = new ArrayList<String>();
     int intCanteenId = 0;
     AlertDialog.Builder alertDialogBuilder;
-    private long lngEmployeeId = 0;
+    private long lngStudentId = 0;
     TextView tvPageTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_order_placing);
-        tvPageTitle = findViewById(R.id.pageTitle);
+        tvPageTitle = (TextView) findViewById(R.id.pageTitle);
         tvPageTitle.setText("Place Order");
-        Button btnBack= findViewById(R.id.button_back);
+        Button btnBack=(Button) findViewById(R.id.button_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-        onBackPressed();    }
+           onBackPressed(); }
         });
-        Button btnRef= findViewById(R.id.button_refresh);
-        btnRef.setVisibility(View.GONE);
-
         StatusColor.SetStatusColor(getWindow(), ContextCompat.getColor(this, R.color.colorblue));
         lMenuId = getIntent().getIntArrayExtra("MenuId");
         lMenu = getIntent().getStringArrayExtra("Menu");
@@ -77,15 +77,15 @@ public class MenuOrderPlacing extends AppCompatActivity {
 
         //intent.putExtra("MenuImageUrl", MenuImagesTemp);
 
-        lstMenu = findViewById(R.id.lstmenu1);
+        lstMenu = (ListView) findViewById(R.id.lstmenu1);
         CustomAdapter1 customAdapter = new CustomAdapter1();
         lstMenu.setAdapter(customAdapter);
 
-        tvTotal = findViewById(R.id.secondTotal);
+        tvTotal = (TextView) findViewById(R.id.secondTotal);
         tvTotal.setText("\u20B9" + " " + String.format("%.02f", lTotal));
         //tvTotal.setText("\u20B9" + " " + Float.toString(lTotal));
 
-        Button btnBack1 = findViewById(R.id.btnBack);
+        Button btnBack1 = (Button) findViewById(R.id.btnBack);
         btnBack1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,13 +94,13 @@ public class MenuOrderPlacing extends AppCompatActivity {
         });
 
 
-        Button btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
+        Button btnPlaceOrder = (Button) findViewById(R.id.btnPlaceOrder);
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final SharedPreferences loginsession = getApplicationContext().getSharedPreferences("SessionLogin", 0);
                 double lTotal = 0;
-                lngEmployeeId = loginsession.getLong("userid", 1);
+                lngStudentId = loginsession.getLong("userid", 1);
                 String strOrderDetails = "";
                 try {
                     for (int i = 0; i < lMenu.length; i++) {
@@ -114,15 +114,15 @@ public class MenuOrderPlacing extends AppCompatActivity {
                     System.out.println(e.getMessage());
                 }
                 if (lTotal > 0) {
-                   // Log.i("Menu Order Details : ", intCanteenId +"--"+strOrderDetails);
+                    Log.i("Menu Order Details : ", intCanteenId +"--"+strOrderDetails);
                     strParameters = new String[]{
                             "String", "returndata", strOrderDetails,
                             "int", "canteenid", String.valueOf(intCanteenId),
-                            "Long", "employeeid", String.valueOf(lngEmployeeId),
+                            "Long", "studentid", String.valueOf(lngStudentId),
                             "double", "totalbillamount", String.valueOf(lTotal)
                     };
                     WebService.strParameters = strParameters;
-                    WebService.METHOD_NAME = "PlaceOrder";
+                    WebService.METHOD_NAME = "StudentMenuPlaceOrder";
                     AsyncCallWS task = new AsyncCallWS();
                     task.execute();
                 } else
@@ -167,12 +167,12 @@ public class MenuOrderPlacing extends AppCompatActivity {
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             convertView = getLayoutInflater().inflate(R.layout.menu_layout, null);
-            final TextView txtQuantity = convertView.findViewById(R.id.txtquantity);
-            final TextView txtMenu = convertView.findViewById(R.id.txtmenu);
-            final TextView txtPrice = convertView.findViewById(R.id.txtprice);
-            final Button btnPlus = convertView.findViewById(R.id.btnplus);
-            final Button btnMinus = convertView.findViewById(R.id.btnminus);
-            final ImageView imgMenuImage = convertView.findViewById(R.id.imgMenuImage);
+            final TextView txtQuantity = (TextView) convertView.findViewById(R.id.txtquantity);
+            final TextView txtMenu = (TextView) convertView.findViewById(R.id.txtmenu);
+            final TextView txtPrice = (TextView) convertView.findViewById(R.id.txtprice);
+            final Button btnPlus = (Button) convertView.findViewById(R.id.btnplus);
+            final Button btnMinus = (Button) convertView.findViewById(R.id.btnminus);
+            final ImageView imgMenuImage = (ImageView) convertView.findViewById(R.id.imgMenuImage);
 
             btnPlus.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -186,7 +186,10 @@ public class MenuOrderPlacing extends AppCompatActivity {
                     lQuantity[position] = tempQuantity;
                     //lItemTotal[position]=tempQuantity*tempPrice;
                     getTotal();
-                    btnMinus.setEnabled(tempQuantity != 0);
+                    if (tempQuantity == 0)
+                        btnMinus.setEnabled(false);
+                    else
+                        btnMinus.setEnabled(true);
                 }
             });
 
@@ -203,7 +206,10 @@ public class MenuOrderPlacing extends AppCompatActivity {
                         lQuantity[position] = tempQuantity1;
                         //lItemTotal[position]=tempQuantity1*tempPrice1;
                         getTotal();
-                        btnMinus.setEnabled(tempQuantity1 != 0);
+                        if (tempQuantity1 == 0)
+                            btnMinus.setEnabled(false);
+                        else
+                            btnMinus.setEnabled(true);
                     }
                 }
             });
@@ -213,7 +219,6 @@ public class MenuOrderPlacing extends AppCompatActivity {
             txtQuantity.setText(Integer.toString(lQuantity[position]));
 //            imgMenuImage.setImageResource(lMenuImagesIds[position]);
             Picasso.with(MenuOrderPlacing.this).load(lMenuImages[position]).into(imgMenuImage);
-            //Picasso.get().load(lMenuImages[position]).into(imgMenuImage);
             return convertView;
         }
         public void getTotal() {
@@ -231,15 +236,15 @@ public class MenuOrderPlacing extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            dialog.setMessage(getResources().getString(R.string.loading));
+            dialog.setMessage("Loading......");
             //show dialog
             dialog.show();
-            //Log.i(TAG, "onPreExecute");
+            Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            //Log.i(TAG, "doInBackground");
+            Log.i(TAG, "doInBackground");
             if (android.os.Debug.isDebuggerConnected())
                 android.os.Debug.waitForDebugger();
             ResultString = WebService.invokeWS();
@@ -248,7 +253,7 @@ public class MenuOrderPlacing extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            //Log.i(TAG, "onPostExecute");
+            Log.i(TAG, "onPostExecute");
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
             }
