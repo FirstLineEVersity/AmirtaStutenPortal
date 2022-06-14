@@ -475,9 +475,9 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                 appUpdateInfo1 = appUpdateInfo;
 
 
-                Log.d("AVAILABLE_PACKAGE",  getApplicationContext().getPackageName() + "");
-                Log.d("AVAILABLE_VERSION_CODE", appUpdateInfo.availableVersionCode() + "");
-                Log.d("AVAILABLE_VERSION_CODE_PACKAGE", appUpdateInfo.packageName() + "");
+               // Log.d("AVAILABLE_PACKAGE",  getApplicationContext().getPackageName() + "");
+               // Log.d("AVAILABLE_VERSION_CODE", appUpdateInfo.availableVersionCode() + "");
+                //Log.d("AVAILABLE_VERSION_CODE_PACKAGE", appUpdateInfo.packageName() + "");
                 if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                         // For a flexible update, use AppUpdateType.FLEXIBLE
                         && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
