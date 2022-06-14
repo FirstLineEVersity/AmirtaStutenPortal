@@ -6,6 +6,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="timetablenotfoundmsg">Timetable not found </string>
+    <string name="canteennotfoundmsg">Canteen not found </string>
+    <string name="menuitemsfoundmsg">Menu Items not found </string>
 
     <string name="menu_personaldetails">Profile</string>
     <string name="menu_academic">Academic</string>
@@ -23,6 +26,7 @@
     <string name="Update">Update</string>
 
     <string name="menu_other_details">Other Details</string>
+    <string name="menu_canteen">Canteen</string>
 
     <string name="fheventname">Event Name</string>
     <!-- TODO: Remove or change this placeholder text -->

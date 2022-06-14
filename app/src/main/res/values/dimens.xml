@@ -10,6 +10,7 @@
     <dimen name="login_button">16sp</dimen>
     <dimen name="home_text">15sp</dimen>
     <dimen name="lstatus_text">16sp</dimen>
+    <dimen name="menu_buttons">20sp</dimen>
 
 
 </resources>
