@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/drawable-v24/btnnorma_pinkl.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/drawable-v24/ic_actionname.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/drawable-v24/ic_baseline_navigate_next_24.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/activity_canteen_selection.xml" value="0.14" />
         <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/canteenname_layout.xml" value="0.10104166666666667" />
         <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/eventvideoviewlist.xml" value="0.1" />
         <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/hosteldetailslistitems.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/menu_layout.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/layout/page_header.xml" value="0.1" />
+        <entry key="..\:/EVersityFirstLine/Shasun/ShasunStudentInformation/app/src/main/res/menu/main_menu.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btn_info_selector.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btnhover.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/StudentInformation/StudentInformation/app/src/main/res/drawable-v24/btnnormal.xml" value="0.1" />
