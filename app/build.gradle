@@ -20,6 +20,7 @@ android {
 }
 repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
+    maven { url "https://jitpack.io" } //Advanced Web View
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -31,13 +32,13 @@ dependencies {
     implementation files('libs/android-async-http-1.4.6.jar')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.material:material:1.0.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    //implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
 }
 

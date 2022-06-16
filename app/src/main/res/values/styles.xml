@@ -58,8 +58,8 @@
     </style>
 
     <style name="StyleHomeGridImage">
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/grid_corner_radious</item>
         <item name="android:padding">1dp</item>
         <item name="android:layout_gravity">center_horizontal</item>

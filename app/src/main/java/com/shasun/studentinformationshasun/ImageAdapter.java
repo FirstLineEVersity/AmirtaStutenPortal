@@ -53,8 +53,8 @@ public class ImageAdapter extends BaseAdapter {
             grid  = inflater.inflate(R.layout.gridsingle, null);
             TextView textView = grid.findViewById(R.id.grid_text);
             imageView = grid.findViewById(R.id.grid_image);
-            imageView.getLayoutParams().height = 150;
-            imageView.getLayoutParams().width = 150;
+            imageView.getLayoutParams().height = 120;
+            imageView.getLayoutParams().width = 120;
             imageView.setImageResource(mThumbIds[position]);
             imageView.setBackground(grid.getContext().getDrawable(R.drawable.grid_corner_radious));
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -74,6 +74,7 @@ public class ImageAdapter extends BaseAdapter {
     }
     public Integer[] mThumbIds = {
             R.drawable.icon_personaldetails,
+            R.drawable.icon_timetable,
             R.drawable.icon_feedetails,
             R.drawable.icon_financedetails,
             R.drawable.icon_studentsubjects,
@@ -81,10 +82,14 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.icon_examdetails,
             R.drawable.icon_librarytransaction,
             R.drawable.icon_notification,
+            R.drawable.icon_enotice,
+            R.drawable.icon_lms,
             R.drawable.icon_subjectattendance,
             R.drawable.icon_hourattendance,
             R.drawable.icon_cumulativeattendance,
             R.drawable.icon_changepassword,
+            R.drawable.icon_leaveentry,
+            R.drawable.icon_helpdesk,
             R.drawable.icon_others,
             R.drawable.icon_canteen,
             R.drawable.icon_exit
@@ -92,6 +97,7 @@ public class ImageAdapter extends BaseAdapter {
 
     public String[] web = {
             "Profile",
+            "Timetable",
             "Fee Dues",
             "Fee Paid",
             "Subjects",
@@ -99,10 +105,14 @@ public class ImageAdapter extends BaseAdapter {
             "Exam Details",
             "Library Trans.",
             "Notifications",
+            "E-Notice",
+            "LMS",
             "Attendance",
             "Hour Attendance",
-            "Cummulative Attendance",
+            "Cumulative Attendance",
             "Change Password",
+            "Leave Entry",
+            "Help Desk",
             "Other Details",
             "Canteen",
             "Logout"
@@ -128,7 +138,7 @@ public class ImageAdapter extends BaseAdapter {
             "Subjects",
             //"Hostel Details",
             "Attendance",
-            "Cummulative Attendance",
+            "Cumulative Attendance",
             "Hour Attendance",
             "Internal Marks",
             "Exam Details",

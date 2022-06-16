@@ -15,6 +15,11 @@
             app:showAsAction="always"
             android:title="@string/hProfile" />
         <item
+            android:id="@+id/nav_timetable"
+            android:icon="@drawable/icon_timetable"
+            app:showAsAction="always"
+            android:title="@string/hTimeTable" />
+        <item
             android:id="@+id/nav_feesdues"
             android:icon="@drawable/icon_feedetails"
             android:title="@string/menu_feesdues" />
@@ -42,6 +47,14 @@
             android:id="@+id/nav_notifications"
             android:icon="@drawable/icon_notification"
             android:title="@string/menu_Notification" />
+ <item
+            android:id="@+id/nav_enotice"
+            android:icon="@drawable/icon_enotice"
+            android:title="@string/hENotice" />
+ <item
+            android:id="@+id/nav_lms"
+            android:icon="@drawable/icon_lms"
+            android:title="@string/hLMS" />
 
 
         <item
@@ -63,6 +76,14 @@
             android:id="@+id/nav_changepwd"
             android:icon="@drawable/icon_changepassword"
             android:title="@string/menu_changepwd" />
+ <item
+            android:id="@+id/nav_leaveentry"
+            android:icon="@drawable/icon_leaveentry"
+            android:title="@string/hLeaveEntry" />
+ <item
+            android:id="@+id/nav_helpdesk"
+            android:icon="@drawable/icon_helpdesk"
+            android:title="@string/hHelpDesk" />
 
         <item
             android:id="@+id/nav_other_details"

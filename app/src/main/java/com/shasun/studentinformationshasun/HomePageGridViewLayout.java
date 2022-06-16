@@ -117,7 +117,7 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 if (!isAppUpdateAvailable) {
-                    if (position == 14) {//Logout option
+                    if (position == 19) {//Logout option
                         SharedPreferences myPrefs = getSharedPreferences("SessionLogin", MODE_PRIVATE);
                         SharedPreferences.Editor editor = myPrefs.edit();
                         editor.clear();
@@ -138,17 +138,24 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
 
                         }
                         if (position == 1) {
-                            Intent intent = new Intent(HomePageGridViewLayout.this, FeeDetails.class);
+                            Intent intent = new Intent(HomePageGridViewLayout.this, Timetable.class);
+                            // Intent intent = new Intent(HomePageGridViewLayout.this, CanteenSelection.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
                         if (position == 2) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, FeeDetails.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 3) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, FinanceDetails.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
-                        if (position == 3) {
+                        if (position == 4) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, StudentWiseSubjects.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
@@ -162,44 +169,55 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                     }
 
               */
-                        if (position == 4) {
+                        if (position == 5) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, InternalMarkDetails.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
 
-                        if (position == 5) {
+                        if (position == 6) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, ExamDetails.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
-                        if (position == 6) {
+                        if (position == 7) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, LibraryTransaction.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
-                        if (position == 7) {
+                        if (position == 8) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, NotificationView.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
-
-                        if (position == 8) {
-                            Intent intent = new Intent(HomePageGridViewLayout.this, SubjectWiseAttendance.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-
-                        }
                         if (position == 9) {
-                            Intent intent = new Intent(HomePageGridViewLayout.this, HourWiseAttendance.class);
+                            Intent intent = new Intent(HomePageGridViewLayout.this, ENoticeView.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
                         if (position == 10) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, LMS.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 11) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, SubjectWiseAttendance.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 12) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, HourWiseAttendance.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 13) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, CummulativAttendance.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
@@ -207,19 +225,32 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                         }
 
 
-                        if (position == 11) {
+                        if (position == 14) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
-                        if (position == 12) {
+
+                        if (position == 15) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, LeaveEntry.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 16) {
+                            Intent intent = new Intent(HomePageGridViewLayout.this, HelpDesk.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+
+                        }
+                        if (position == 17) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, EventDisplayActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
-                        if (position == 13) {
+                        if (position == 18) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, CanteenSelection.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
@@ -323,7 +354,37 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                //fragmentClass = ProfileFragment.class;
 //            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                    new ProfileFragment()).commit();
-           } else if (id == R.id.nav_feesdues) {
+           }  else if (id == R.id.nav_timetable) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, Timetable.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+           } else if (id == R.id.nav_enotice) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, ENoticeView.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+           } else if (id == R.id.nav_lms) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, LMS.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+           } else if (id == R.id.nav_leaveentry) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, LeaveEntry.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+           } else if (id == R.id.nav_helpdesk) {
+               toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
+               Intent intent = new Intent(HomePageGridViewLayout.this, HelpDesk.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+               startActivity(intent);
+           }else if (id == R.id.nav_feesdues) {
                toolbar.setTitle(getResources().getString(R.string.menu_feesdues));
                Intent intent = new Intent(HomePageGridViewLayout.this, FeeDetails.class);
                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -44,11 +44,36 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.MainActivity"
+            android:name="com.shasun.studentinformationshasun.ENoticeView"
             android:label="@string/title_activity_main"
-
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.shasun.studentinformationshasun.Timetable"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.shasun.studentinformationshasun.LMS"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.shasun.studentinformationshasun.LeaveEntry"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.shasun.studentinformationshasun.HelpDesk"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+
         <activity
             android:theme="@style/AppTheme"
             android:name="com.shasun.studentinformationshasun.PersonalDetails"

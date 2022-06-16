@@ -46,6 +46,11 @@
     <string name="install">Install</string>
     <string name="wsMenuAccessRights">menuAccessRights</string>
     <string name="hProfile">Profile</string>
+    <string name="hTimeTable">Timetable</string>
+    <string name="hENotice">E-Notice</string>
+    <string name="hLMS">LMS</string>
+    <string name="hLeaveEntry">Leave Entry</string>
+    <string name="hHelpDesk">Help Desk</string>
     <string name="hLogout">Logout</string>
 
     <!-- Profile -->

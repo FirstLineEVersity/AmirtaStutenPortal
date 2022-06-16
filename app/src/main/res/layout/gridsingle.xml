@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center|center_horizontal"
-    android:padding="5dp">
+    android:padding="2dp">
     <!-- COLUMN 1  -->
     <androidx.cardview.widget.CardView
         style="@style/StyleHomeGridCardView"
