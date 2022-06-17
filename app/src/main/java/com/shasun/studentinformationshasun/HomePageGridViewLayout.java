@@ -308,7 +308,7 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                         editor.commit();
                         SqlliteController sc = new SqlliteController(getApplicationContext());
                         // sc.deleteLoginStaffDetails();
-                        Intent intent = new Intent(HomePageGridViewLayout.this, MainActivity.class);
+                        Intent intent = new Intent(HomePageGridViewLayout.this, HomePageGridViewLayout.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
 
@@ -464,16 +464,15 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
 
                startActivity(intent);
            } else if (id == R.id.nav_logout) {
-               SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("SessionLogin", MODE_PRIVATE);
+               SharedPreferences myPrefs = getSharedPreferences("SessionLogin", MODE_PRIVATE);
                SharedPreferences.Editor editor = myPrefs.edit();
                editor.clear();
                editor.commit();
-               SqlliteController sc = new SqlliteController(getApplicationContext());
-               //sc.deleteLoginStaffDetails();
-               Intent intent = new Intent(HomePageGridViewLayout.this, MainActivity.class);
+               SqlliteController sc = new SqlliteController(HomePageGridViewLayout.this);
+               sc.deleteLoginStudentDetails();
+               Intent intent = new Intent(HomePageGridViewLayout.this, LoginActivity.class);
                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                startActivity(intent);
-               finish();
            }
        }
 

@@ -166,7 +166,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
             SqlliteController sc = new SqlliteController(ChangePassword.this);
             sc.deleteLoginStudentDetails();
 
-            Intent intent = new Intent(ChangePassword.this, LoginActivityOld.class);
+            Intent intent = new Intent(ChangePassword.this, HomePageGridViewLayout.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 

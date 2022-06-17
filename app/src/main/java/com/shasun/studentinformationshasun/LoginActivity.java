@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             return;
                         }
                         token = task.getResult().getToken();
-                         // Log.e("Token Test : ", token);
+                          Log.e("Token Test : ", token);
                     }
                 });
 

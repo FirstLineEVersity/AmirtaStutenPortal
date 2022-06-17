@@ -32,25 +32,17 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
+
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
-        View grid;
-        ViewHolder holder;
-        LayoutInflater inflater = (LayoutInflater) mContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View grid = convertView;
         if (convertView == null) {
-//            grid = new View(mContext);
-//            grid  = inflater.inflate(R.layout.gridsingle, null);
-//            TextView textView = (TextView) grid.findViewById(R.id.grid_text);
-//            imageView = (ImageView)grid.findViewById(R.id.grid_image);
-//            textView.setText(web[position]);
-//            imageView.setImageResource(mThumbIds[position]);
-//            imageView.getLayoutParams().height = 200;
-//            imageView.getLayoutParams().width = 200;
-
-            grid = new View(mContext);
+            LayoutInflater inflater = (LayoutInflater) mContext
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid  = inflater.inflate(R.layout.gridsingle, null);
+
+        }
             TextView textView = grid.findViewById(R.id.grid_text);
             imageView = grid.findViewById(R.id.grid_image);
             imageView.getLayoutParams().height = 120;
@@ -62,9 +54,7 @@ public class ImageAdapter extends BaseAdapter {
             textView.setTypeface(Typeface.DEFAULT);
             textView.setTextSize(14);
 
-        } else {
-            grid = convertView;
-        }
+
         return grid;
     }
 
@@ -117,38 +107,6 @@ public class ImageAdapter extends BaseAdapter {
             "Canteen",
             "Logout"
     };
-    // Keep all Images in array
-    /*
-    public Integer[] mThumbIds = {
-            R.drawable.icon_personaldetails,R.drawable.icon_feedetails,
-            R.drawable.icon_financedetails,R.drawable.icon_studentsubjects,
-           // R.drawable.icon_hosteldetails,
-            R.drawable.icon_subjectattendance,
-            R.drawable.icon_cumulativeattendance,R.drawable.icon_hourattendance,R.drawable.icon_internalmarkdetails,
-            R.drawable.icon_examdetails,R.drawable.icon_librarytransaction,
-            //R.drawable.icon_others,
-            R.drawable.icon_notification,
-            R.drawable.icon_changepassword,R.drawable.icon_exit
-    };
 
-    public String[] web = {
-            "Profile",
-            "Fee Dues",
-            "Fee Paid",
-            "Subjects",
-            //"Hostel Details",
-            "Attendance",
-            "Cumulative Attendance",
-            "Hour Attendance",
-            "Internal Marks",
-            "Exam Details",
-            "Library Trans.",
-            //"Other Details",
-            "Notifications",
-            "Change Password",
-            "Logout"
-    };
-
-     */
 }
 
