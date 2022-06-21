@@ -93,7 +93,7 @@ public class SubjectWiseAttendance extends AppCompatActivity {
                 int i = 0;
                 do {
                     tvLastUpdated.setText("Last Updated: "+cursor.getString(cursor.getColumnIndex("lastupdated")));
-                    String strRow = cursor.getString(cursor.getColumnIndex("subjectcode")) + "##" + cursor.getString(cursor.getColumnIndex("presenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("absenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("totalhrs"))+"##"+cursor.getString(cursor.getColumnIndex("presentpercentage"));
+                    String strRow = cursor.getString(cursor.getColumnIndex("subjectcode")) +"##"+cursor.getString(cursor.getColumnIndex("totalhrs"))+ "##" + cursor.getString(cursor.getColumnIndex("presenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("absenthrs"))+"##"+cursor.getString(cursor.getColumnIndex("presentpercentage"));
                     String strAbbreviation = "<font color='#2e76b2'><b>"+cursor.getString(cursor.getColumnIndex("subjectcode"))  + " </b></font> - " + cursor.getString(cursor.getColumnIndex("subjectdesc"));
                     String[] strColumns = strRow.split("##");
                     addData(strColumns,i);
@@ -181,7 +181,6 @@ public class SubjectWiseAttendance extends AppCompatActivity {
                 txtNoData.setVisibility(View.VISIBLE);
                 txtNoData.setText(strResultMessage);
                     Toast.makeText(SubjectWiseAttendance.this, "Response: "+strResultMessage, Toast.LENGTH_LONG).show();
-                System.out.println(e.getMessage());
             }
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();

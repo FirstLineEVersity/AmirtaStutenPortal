@@ -92,6 +92,7 @@ public class ExamDetails extends AppCompatActivity {
                 txtNoData.setVisibility(View.GONE);
 
                 addHeaderData();
+                int i =0 ;
                 do {
                     tvLastUpdated.setText("Last Updated: "+cursor.getString(cursor.getColumnIndex("lastupdated")));
                     String strRow = cursor.getString(cursor.getColumnIndex("semester"))+ "##"+
@@ -101,12 +102,12 @@ public class ExamDetails extends AppCompatActivity {
 
                     String[] strColumns = strRow.split("##");
                     String strAbbreviation = "<font color='#2e76b2'><b>"+cursor.getString(cursor.getColumnIndex("subjectcode")) + " </b></font> - " + cursor.getString(cursor.getColumnIndex("subjectdesc"));
-                    addData(strColumns);
+                    addData(strColumns,i);
                     addAbbrivationData(strAbbreviation);
+                    i++;
                 } while (cursor.moveToNext());
             } else {
                 txtNoData.setVisibility(View.VISIBLE);
-
                 strParameters = new String[]{"Long", "studentid", String.valueOf(lngStudentId)};
                 WebService.strParameters = strParameters;
                 WebService.METHOD_NAME = "getExamDetails";
@@ -203,7 +204,7 @@ public class ExamDetails extends AppCompatActivity {
         params1.setMargins(2, 0, 0, 2);
         params1.weight = 1;
         tr.setLayoutParams(params1);
-        tr.setBackgroundResource(R.color.colorhower);
+        tr.setBackgroundResource(R.color.cardColoro);
         for (int i = 0; i < str.length; i++){
             TextView tv = new TextView(ExamDetails.this);
             tv.setLayoutParams(params1);
@@ -217,14 +218,19 @@ public class ExamDetails extends AppCompatActivity {
         tl.addView(tr, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
     }
 
-    public void addData(String[] str) {
+    public void addData(String[] str,int pos) {
         TableLayout tl = findViewById(R.id.tblViewExamdetails);
         TableRow tr = new TableRow(ExamDetails.this);
         TableRow.LayoutParams params1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
-        params1.setMargins(2, 0, 0, 2);
+        params1.setMargins(10, 20, 10, 20);
         params1.weight = 1;
         tr.setLayoutParams(params1);
-        tr.setBackgroundResource(R.color.colornormal);
+        if(pos % 2 == 0) {
+            tr.setBackgroundResource(R.color.colorWhite);
+        }else{
+            tr.setBackgroundResource(R.color.colorGrey);
+
+        }
         for (int i = 0; i < str.length; i++) {
             TextView tv = new TextView(ExamDetails.this);
             tv.setLayoutParams(params1);
