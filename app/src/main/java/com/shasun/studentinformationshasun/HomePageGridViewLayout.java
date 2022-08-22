@@ -117,7 +117,7 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 if (!isAppUpdateAvailable) {
-                    if (position == 19) {//Logout option
+                    if (position == 17) {//Logout option
                         SharedPreferences myPrefs = getSharedPreferences("SessionLogin", MODE_PRIVATE);
                         SharedPreferences.Editor editor = myPrefs.edit();
                         editor.clear();
@@ -225,25 +225,26 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                         }
 
 
-                        if (position == 14) {
+                        if (position == 16) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, ChangePassword.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
 
-                        if (position == 15) {
+                        if (position == 14) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, LeaveEntry.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
-                        if (position == 16) {
+                        if (position == 15) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, HelpDesk.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         }
+                        /*
                         if (position == 17) {
                             Intent intent = new Intent(HomePageGridViewLayout.this, EventDisplayActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -256,6 +257,8 @@ public class HomePageGridViewLayout extends AppCompatActivity implements Navigat
                             startActivity(intent);
 
                         }
+
+                         */
                     } else {
                         Toast.makeText(HomePageGridViewLayout.this, "You dont have Internet connection", Toast.LENGTH_LONG).show();
                     }

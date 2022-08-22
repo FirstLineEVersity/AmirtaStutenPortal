@@ -77,11 +77,11 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.icon_subjectattendance,
             R.drawable.icon_hourattendance,
             R.drawable.icon_cumulativeattendance,
-            R.drawable.icon_changepassword,
             R.drawable.icon_leaveentry,
             R.drawable.icon_helpdesk,
-            R.drawable.icon_others,
-            R.drawable.icon_canteen,
+            R.drawable.icon_changepassword,
+            //  R.drawable.icon_others,
+           // R.drawable.icon_canteen,
             R.drawable.icon_exit
     };
 
@@ -100,11 +100,11 @@ public class ImageAdapter extends BaseAdapter {
             "Attendance",
             "Hour Attendance",
             "Cumulative Attendance",
-            "Change Password",
             "Leave Entry",
             "Help Desk",
-            "Other Details",
-            "Canteen",
+            "Change Password",
+            //   "Other Details",
+           // "Canteen",
             "Logout"
     };
 
