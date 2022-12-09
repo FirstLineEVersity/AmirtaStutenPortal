@@ -4,10 +4,10 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.shasun.studentinformationshasun"
+        applicationId "com.amirta.studentinformation"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 6
+        versionCode 10
         versionName "5.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

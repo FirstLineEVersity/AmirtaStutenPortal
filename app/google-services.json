@@ -10,36 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:83297834974:android:e066621dbd15b5c4cfaf4f",
         "android_client_info": {
-          "package_name": "com.example.studentinformationshasun"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "83297834974-dcqef9j4dv4k55sut291tl379opggh22.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB3dlBgVM_dJ--Eri5Azh6GZG0iTXWkY5A"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "83297834974-dcqef9j4dv4k55sut291tl379opggh22.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:83297834974:android:b6f8a528eb190bd5cfaf4f",
-        "android_client_info": {
-          "package_name": "com.shasun.studentinformationshasun"
+          "package_name": "com.amirta.studentinformation"
         }
       },
       "oauth_client": [
@@ -67,3 +38,5 @@
   ],
   "configuration_version": "1"
 }
+
+

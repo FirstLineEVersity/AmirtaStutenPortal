@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.shasun.studentinformationshasun"
+    package="com.amirta.studentinformation"
     tools:ignore="GoogleAppIndexingWarning">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,7 +23,7 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.LoginActivity"
+            android:name="com.amirta.studentinformation.LoginActivity"
             android:label="@string/app_name"
 
             android:screenOrientation="portrait"
@@ -36,38 +36,38 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.HomePageGridViewLayout"
+            android:name="com.amirta.studentinformation.HomePageGridViewLayout"
             android:label="@string/title_activity_homescreen"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.ENoticeView"
+            android:name="com.amirta.studentinformation.ENoticeView"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.Timetable"
+            android:name="com.amirta.studentinformation.Timetable"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.LMS"
+            android:name="com.amirta.studentinformation.LMS"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.LeaveEntry"
+            android:name="com.amirta.studentinformation.LeaveEntry"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.HelpDesk"
+            android:name="com.amirta.studentinformation.HelpDesk"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
@@ -75,14 +75,14 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.PersonalDetails"
+            android:name="com.amirta.studentinformation.PersonalDetails"
             android:label="PersonalDetails"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.EventDisplayActivity"
+            android:name="com.amirta.studentinformation.EventDisplayActivity"
             android:label="Other Details"
 
             android:screenOrientation="portrait"
@@ -90,105 +90,105 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.FeeDetails"
+            android:name="com.amirta.studentinformation.FeeDetails"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.FinanceDetails"
+            android:name="com.amirta.studentinformation.FinanceDetails"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.StudentWiseSubjects"
+            android:name="com.amirta.studentinformation.StudentWiseSubjects"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.HostelDetails"
+            android:name="com.amirta.studentinformation.HostelDetails"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.SubjectWiseAttendance"
+            android:name="com.amirta.studentinformation.SubjectWiseAttendance"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.CummulativAttendance"
+            android:name="com.amirta.studentinformation.CummulativAttendance"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.HourWiseAttendance"
+            android:name="com.amirta.studentinformation.HourWiseAttendance"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.InternalMarkDetails"
+            android:name="com.amirta.studentinformation.InternalMarkDetails"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.ExamDetails"
+            android:name="com.amirta.studentinformation.ExamDetails"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.LibraryTransaction"
+            android:name="com.amirta.studentinformation.LibraryTransaction"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.NotificationView"
+            android:name="com.amirta.studentinformation.NotificationView"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.ChangePassword"
+            android:name="com.amirta.studentinformation.ChangePassword"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"  />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.CanteenSelection"
+            android:name="com.amirta.studentinformation.CanteenSelection"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"  />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.MenuOrderPlacing"
+            android:name="com.amirta.studentinformation.MenuOrderPlacing"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"  />
         <activity
             android:theme="@style/AppTheme"
-            android:name="com.shasun.studentinformationshasun.TestingActivity"
+            android:name="com.amirta.studentinformation.TestingActivity"
             android:label="@string/title_activity_main"
 
             android:screenOrientation="portrait"

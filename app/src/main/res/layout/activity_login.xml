@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:background="@color/colorWhite"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                 android:fontFamily="monotype corsiva"
                 android:textStyle="bold"
                 android:paddingTop="10dp"
-                android:textColor="@color/appColorText"
+                android:textColor="@color/colorBlack"
                 android:textColorHighlight="@android:color/primary_text_dark"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
@@ -56,7 +57,7 @@
                         android:id="@+id/usernameInput"
                         android:hint="@string/loginUserName"
                         android:drawableLeft="@drawable/ic_user_person_24"
-                        android:text=""
+                        android:text="CGL/20/PDHMCS/00037"
 
                         />
 
@@ -79,7 +80,7 @@
                         android:drawableLeft="@drawable/ic_password_24"
                         android:drawableStart="@drawable/ic_password_24"
                         android:inputType="textPassword"
-                        android:text=""/>
+                        android:text="13022005"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
